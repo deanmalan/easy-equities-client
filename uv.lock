@@ -157,7 +157,7 @@ wheels = [
 
 [[package]]
 name = "easy-equities-client"
-version = "0.6.0"
+version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "bs4" },

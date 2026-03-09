@@ -18,7 +18,7 @@ jobs:
       with:
         python-version: 3.13
     - name: Run pre-commit
-      uses: pre-commit/action@v3
+      uses: pre-commit/action@v3.0.1
 
   test:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
           pyproject.toml
           uv.lock
     - name: Install Dependencies
-      run: uv sync --no-dev --group tests --extra all
+      run: uv sync --dev
     - name: Test with pytest
       run: |
         uv run poetry run pytest --cov
