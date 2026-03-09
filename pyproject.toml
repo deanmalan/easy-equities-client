@@ -23,7 +23,6 @@ requires-python = ">=3.13"
 dependencies = [
     "bs4>=0.0.2",
     "requests>=2.32.5",
-    "types-requests>=2.32.4.20260107",
 ]
 
 [dependency-groups]
@@ -31,10 +30,9 @@ dev = [
     "lxml>=6.0.2",
     "mypy>=1.19.1",
     "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
     "requests-mock>=1.12.1",
-]
-lint = [
     "ruff>=0.15.5",
 ]
 

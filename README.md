@@ -6,7 +6,7 @@
 Unofficial Python client for [Easy Equities](easyequities.io/) and 
 [Satrix](satrix.co.za/). **Intended for personal use.**
 
-Supports Python 3.6+.
+Supports Python 3.13+.
 
 [Pypi](https://pypi.org/project/easy-equities-client/)
 
@@ -179,8 +179,6 @@ Run a script to show your holdings and their total profits/losses, e.g.
 [show_holdings_profit_loss.py](https://github.com/delenamalan/easy-equities-client/blob/master/examples/show_holdings_profit_loss.py).
 
 ![show_holdings_profit_loss.py example output](https://raw.githubusercontent.com/delenamalan/easy-equities-client/master/examples/show_holdings_profit_loss_example.png)
-
-
 
 ## Contributing
 
