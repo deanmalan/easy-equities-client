@@ -3,28 +3,24 @@
 ## Installation
 
 System dependencies:
-- Python 3.6+
-- [Python Poetry](https://python-poetry.org/docs/)
+- Python 3.13+
+- [uv](https://docs.astral.sh/uv/)
 
-1. Create a virtual environment.
-2. Run `poetry install` to install the package.
-
-### Troubleshooting
-
-- If you're getting the error: `ModuleNotFoundError: No module named '_sqlite3'`, you need to install `libsqlite3-dev` (`sudo apt install libsqlite3-dev` on Ubuntu) and reinstall Python.
+1. Install Python 3.13: `uv python install 3.13`.
+2. `uv sync` to install packages.
 
 ## Tests
 
 Running the tests:
 
 ```
-pytest
+uv run pytest
 ```
 
 Running the tests with code coverage:
 
 ```
-pytest --cov=easy_equities_client tests/
+uv run pytest --cov=easy_equities_client tests/
 ```
 
 ## Linting
@@ -41,8 +37,7 @@ With pre-commit:
 Manually:
 
 ```
-black .
-flake8
+uv run ruff format
 ```
 
 ## Type-checking
@@ -50,15 +45,11 @@ flake8
 We use [MyPy](https://mypy.readthedocs.io/en/latest/index.html) for static type-checking. You can run it with:
 
 ```
-mypy easy_equities_client tests
+uv run mypy src tests
 ```
 
 ## Releasing a new version
 
 1. Update [CHANGELOG.md](./CHANGELOG.md) following the [Keep a changelog](https://keepachangelog.com/en/1.0.0/) format.
 
-2. Bump the version number (following [semantic versioning](https://semver.org/)):
-
-```
-bump2version < either: major / minor / patch >
-```
+2. Bump the version number (following [semantic versioning](https://semver.org/)).

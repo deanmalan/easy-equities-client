@@ -41,35 +41,35 @@ def satrix_client():
 
 @pytest.fixture
 def account_overview_page():
-    with open('./tests/data/account-overview.html', 'r') as f:
+    with open("./tests/data/account-overview.html", "r") as f:
         return f.read()
 
 
 @pytest.fixture
 def account_holdings_page():
-    with open('./tests/data/account-holdings.html', 'r') as f:
+    with open("./tests/data/account-holdings.html", "r") as f:
         return f.read()
 
 
 @pytest.fixture
 def holding_details_page():
-    with open('./tests/data/holding-details.html', 'r') as f:
+    with open("./tests/data/holding-details.html", "r") as f:
         return f.read()
 
 
 @pytest.fixture
 def valuations():
-    with open('./tests/data/account-valuations.json', 'r') as f:
+    with open("./tests/data/account-valuations.json", "r") as f:
         return f.read()
 
 
 @pytest.fixture
 def account_transactions():
-    with open('./tests/data/account-transactions.json', 'r') as f:
+    with open("./tests/data/account-transactions.json", "r") as f:
         return json.loads(f.read())
 
 
 @pytest.fixture
 def historical_prices():
-    with open('./tests/data/historical-prices.json', 'r') as f:
+    with open("./tests/data/historical-prices.json", "r") as f:
         return json.loads(f.read())

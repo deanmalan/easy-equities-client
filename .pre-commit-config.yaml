@@ -1,23 +1,14 @@
 repos:
--   repo: https://github.com/asottile/seed-isort-config
-    rev: v1.9.4
-    hooks:
-    - id: seed-isort-config
--   repo: https://github.com/PyCQA/isort
-    rev: 5.9.3
-    hooks:
-    - id: isort
--   repo: https://github.com/psf/black
-    rev: 20.8b1
-    hooks:
-    - id: black
-      language_version: python3.8
-- repo: https://gitlab.com/pycqa/flake8
-  rev: 3.8.4
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.15.5
   hooks:
-  - id: flake8
-    additional_dependencies: [flake8-bugbear]
-- repo: https://github.com/pre-commit/mirrors-mypy
-  rev: '6fd7e2a39e5a8f7c7b14ddcc5290ef69b0c446db'
-  hooks:
-  - id: mypy
+    # Run the linter.
+    - id: ruff-check
+    # Run the formatter.
+    - id: ruff-format
+
+#- repo: https://github.com/pre-commit/mirrors-mypy
+#  rev: 'a66e98df7b4aeeb3724184b332785976d062b92e'
+#  hooks:
+#  - id: mypy

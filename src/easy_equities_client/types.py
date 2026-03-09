@@ -4,7 +4,7 @@ from requests import Session
 
 
 class Client:
-    def __init__(self, base_url: str = "", session: Session = None):
+    def __init__(self, base_url: str = "", session: Session | None = None):
         self.base_url = base_url
         if session is None:
             self.session = Session()

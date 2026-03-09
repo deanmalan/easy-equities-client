@@ -37,8 +37,7 @@ class PlatformClient(Client):
             "&ReturnUrl=&OneSignalGameId=&IsUsingNewLayoutSatrixOrEasyEquitiesMobileApp=False"
         )
         self.session.headers["Accept"] = (
-            "text/html,application/xhtml+xml,"
-            "application/xml;q=0.9,image/webp,*/*;q=0.8"
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
         )
         self.session.headers["Connection"] = "keep-alive"
         self.session.headers["Connection-Type"] = "application/x-www-form-urlencoded"

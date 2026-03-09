@@ -5,4 +5,4 @@ _T = TypeVar("_T")
 
 
 def list_of_dataclasses_to_dicts(values: Iterable[_T]) -> List[dict]:
-    return list(map(asdict, values))
+    return list(map(asdict, values))  # type: ignore
