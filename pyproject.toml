@@ -1,9 +1,28 @@
 [project]
 name = "easy-equities-client"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.6.0"
+description = "Unofficial Easy Equities and Satrix Python Client"
+
+authors = ["Dean Malan <delena.malan@gmail.com>"]
+maintainers = ["Dean Malan <delena.malan@gmail.com>"]
+
+license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/deanmalan/easy-equities-client"
+repository = "https://github.com/deanmalan/easy-equities-client"
+
+keywords = ["easyequities", "satrix", "money"]
+
+classifiers=[
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.13',
+]
+
 requires-python = ">=3.13"
+
 dependencies = [
     "bs4>=0.0.2",
     "requests>=2.32.5",
@@ -20,3 +39,7 @@ dev = [
 lint = [
     "ruff>=0.15.5",
 ]
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
