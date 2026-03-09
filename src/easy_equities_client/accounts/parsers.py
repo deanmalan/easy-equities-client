@@ -61,55 +61,55 @@ class HoldingDivParser:
 
     @property
     def name(self) -> str:
-        return self.div.find(attrs={'class': 'equity-image-as-text'}).text.strip()
+        return self.div.find(attrs={"class": "equity-image-as-text"}).text.strip()
 
     @property
     def purchase_value(self) -> str:
-        return self.div.find(attrs={'class': 'purchase-value-cell'}).text.strip()
+        return self.div.find(attrs={"class": "purchase-value-cell"}).text.strip()
 
     @property
     def current_value(self) -> str:
-        return self.div.find(attrs={'class': 'current-value-cell'}).text.strip()
+        return self.div.find(attrs={"class": "current-value-cell"}).text.strip()
 
     @property
     def current_price(self) -> str:
-        return self.div.find(attrs={'class': 'current-price-cell'}).text.strip()
+        return self.div.find(attrs={"class": "current-price-cell"}).text.strip()
 
     @property
     def img(self) -> str:
-        return self.div.find(attrs={'class': 'instrument'}).attrs['src']
+        return self.div.find(attrs={"class": "instrument"}).attrs["src"]
 
     @property
     def contract_code(self) -> str:
-        return self.img[self.img.rindex('/') + 1 : self.img.index('.png')]
+        return self.img[self.img.rindex("/") + 1 : self.img.index(".png")]
 
     @property
     def view_url(self) -> str:
         return (
-            self.div.find(attrs={'class': 'collapse-container'})
-            .find('span')
-            .attrs['data-detailviewurl']
+            self.div.find(attrs={"class": "collapse-container"})
+            .find("span")
+            .attrs["data-detailviewurl"]
         )
 
     @property
     def isin(self) -> str:
         return (
-            self.div.find(attrs={'class': 'collapse-container'})
-            .find('span')
-            .attrs['data-detailviewurl']
-            .split('=')[-1]
+            self.div.find(attrs={"class": "collapse-container"})
+            .find("span")
+            .attrs["data-detailviewurl"]
+            .split("=")[-1]
         )
 
     def to_dict(self) -> Holding:
         fields = [
-            'name',
-            'contract_code',
-            'purchase_value',
-            'current_value',
-            'current_price',
-            'img',
-            'view_url',
-            'isin',
+            "name",
+            "contract_code",
+            "purchase_value",
+            "current_value",
+            "current_price",
+            "img",
+            "view_url",
+            "isin",
         ]
         data: Holding = {}
         for field in fields:
@@ -134,7 +134,7 @@ class AccountHoldingsParser:
         Return the holdings found on the holdings page.
         """
         soup = BeautifulSoup(self.page, "html.parser")
-        holdings_divs = soup.find_all(attrs={'class': 'holding-inner-container'})
+        holdings_divs = soup.find_all(attrs={"class": "holding-inner-container"})
         # Get unique holdings (skip first row because it is the header row)
         divs = set([HoldingDivParser(holding_div) for holding_div in holdings_divs[1:]])
         return [div.to_dict() for div in divs]

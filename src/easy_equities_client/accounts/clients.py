@@ -20,9 +20,9 @@ class AccountsClient(Client):
 
     def _get_account_overview_page(self) -> str:
         response = self.session.get(self._url(constants.PLATFORM_ACCOUNT_OVERVIEW_PATH))
-        assert (
-            response.status_code == 200
-        ), "Account overview page should return 200 status code"
+        assert response.status_code == 200, (
+            "Account overview page should return 200 status code"
+        )
         assert "My Investments" in str(response.content)
         return str(response.content)
 
@@ -36,14 +36,14 @@ class AccountsClient(Client):
         Switch the currently selected account to account with ID account_id.
         """
         if self.current_account != account_id:
-            data = {'trustAccountId': account_id}
+            data = {"trustAccountId": account_id}
             response = self.session.post(
                 self._url(constants.PLATFORM_UPDATE_CURRENCY_PATH), data
             )
             response.raise_for_status()
-            assert (
-                response.status_code == 200
-            ), "Update currency request should return 200 status code"
+            assert response.status_code == 200, (
+                "Update currency request should return 200 status code"
+            )
             self.current_account = account_id
 
     def valuations(self, account_id: str) -> Valuation:
@@ -75,13 +75,13 @@ class AccountsClient(Client):
         holdings = parser.extract_holdings()
         if include_shares:
             for holding in holdings:
-                response = self.session.get(self._url(holding['view_url']))
+                response = self.session.get(self._url(holding["view_url"]))
                 soup = BeautifulSoup(response.content, "html.parser")
                 whole_shares = soup.find(
-                    lambda tag: '#Shares' in tag
+                    lambda tag: "#Shares" in tag
                 ).next_sibling.next_sibling.text.strip()
                 partial_shares = soup.find(
-                    lambda tag: '#FSR' in tag
+                    lambda tag: "#FSR" in tag
                 ).next_sibling.next_sibling.text.strip()
-                holding['shares'] = f"{whole_shares}{partial_shares}"
+                holding["shares"] = f"{whole_shares}{partial_shares}"
         return holdings

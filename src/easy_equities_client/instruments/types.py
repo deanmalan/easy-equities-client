@@ -9,11 +9,11 @@ else:
 
 
 class Period(Enum):
-    ONE_MONTH = 'OneMonth'
-    THREE_MONTHS = 'ThreeMonths'
-    SIX_MONTHS = 'SixMonths'
-    ONE_YEAR = 'OneYear'
-    MAX = 'Max'
+    ONE_MONTH = "OneMonth"
+    THREE_MONTHS = "ThreeMonths"
+    SIX_MONTHS = "SixMonths"
+    ONE_YEAR = "OneYear"
+    MAX = "Max"
 
 
 class ChartData(TypedDict):

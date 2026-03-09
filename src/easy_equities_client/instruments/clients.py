@@ -17,8 +17,8 @@ class InstrumentsClient(Client):
                 f"code={contract_code}&period={period.value}",
             )
         )
-        assert (
-            response.status_code == 200
-        ), "Chart data request should return 200 status code"
+        assert response.status_code == 200, (
+            "Chart data request should return 200 status code"
+        )
         response.raise_for_status()
         return response.json()

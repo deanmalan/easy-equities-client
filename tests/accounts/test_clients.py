@@ -15,12 +15,12 @@ class TestAccountsClient:
 
     def test_list(self, mocker):
         get_account_overview_page_mock = mocker.patch(
-            'easy_equities_client.accounts.clients.AccountsClient._get_account_overview_page'
+            "easy_equities_client.accounts.clients.AccountsClient._get_account_overview_page"
         )
         account_overview_parser_mock = mocker.patch(
-            'easy_equities_client.accounts.clients.AccountOverviewParser'
+            "easy_equities_client.accounts.clients.AccountOverviewParser"
         )
-        accounts = [Account('1', 'Test', '1000')]
+        accounts = [Account("1", "Test", "1000")]
         get_account_overview_page_mock.return_value = None
         account_overview_parser_mock.return_value.extract_accounts.return_value = (
             accounts
@@ -32,23 +32,23 @@ class TestAccountsClient:
         self, base_platform_url, requests_mock, mocker, valuations
     ):
         mocker.patch(
-            'easy_equities_client.accounts.clients.AccountsClient._switch_account'
+            "easy_equities_client.accounts.clients.AccountsClient._switch_account"
         )
         url = base_platform_url + constants.PLATFORM_ACCOUNT_VALUATIONS_PATH
         requests_mock.get(url, status_code=200, json=valuations)
         client = AccountsClient(base_platform_url)
-        assert client.valuations('1') == json.loads(valuations)
+        assert client.valuations("1") == json.loads(valuations)
 
     def test_account_transactions(
         self, base_platform_url, requests_mock, mocker, account_transactions
     ):
         mocker.patch(
-            'easy_equities_client.accounts.clients.AccountsClient._switch_account'
+            "easy_equities_client.accounts.clients.AccountsClient._switch_account"
         )
         url = base_platform_url + constants.PLATFORM_TRANSACTIONS_PATH
         requests_mock.get(url, status_code=200, json=account_transactions)
         client = AccountsClient(base_platform_url)
-        assert client.transactions('1') == account_transactions
+        assert client.transactions("1") == account_transactions
 
     def test_account_holdings(
         self,
@@ -59,7 +59,7 @@ class TestAccountsClient:
         holding_details_page,
     ):
         mocker.patch(
-            'easy_equities_client.accounts.clients.AccountsClient._switch_account'
+            "easy_equities_client.accounts.clients.AccountsClient._switch_account"
         )
         # Mock holdings
         requests_mock.get(
@@ -82,7 +82,7 @@ class TestAccountsClient:
         )
 
         client = AccountsClient(base_platform_url)
-        holdings = client.holdings('1', include_shares=True)
+        holdings = client.holdings("1", include_shares=True)
         expected_data = [
             {
                 "name": "SYGNIA ITRIX EUROSTOXX50",
@@ -108,4 +108,4 @@ class TestAccountsClient:
             },
         ]
 
-        assert sorted(holdings, key=lambda x: x['name']) == expected_data
+        assert sorted(holdings, key=lambda x: x["name"]) == expected_data

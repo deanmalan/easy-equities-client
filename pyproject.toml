@@ -3,9 +3,6 @@ name = "easy-equities-client"
 version = "0.6.0"
 description = "Unofficial Easy Equities and Satrix Python Client"
 
-authors = ["Dean Malan <delena.malan@gmail.com>"]
-maintainers = ["Dean Malan <delena.malan@gmail.com>"]
-
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/deanmalan/easy-equities-client"
@@ -26,6 +23,7 @@ requires-python = ">=3.13"
 dependencies = [
     "bs4>=0.0.2",
     "requests>=2.32.5",
+    "types-requests>=2.32.4.20260107",
 ]
 
 [dependency-groups]
