@@ -55,7 +55,9 @@ for account in accounts:
         profit_loss = convert_to_float(holding["current_value"]) - convert_to_float(
             holding["purchase_value"]
         )
-        profit_loss_perc = (profit_loss / purchase_value) * 100
+        profit_loss_perc = (
+            ((profit_loss / purchase_value) * 100) if purchase_value != 0 else 0
+        )
         symbol = "+" if profit_loss >= 0 else "-"
         colour = colorama.Fore.GREEN if profit_loss >= 0 else colorama.Fore.RED
 
