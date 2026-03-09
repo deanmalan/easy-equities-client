@@ -44,4 +44,4 @@ jobs:
       run: uv sync --dev
     - name: Test with pytest
       run: |
-        uv run poetry run pytest --cov
+        uv run pytest --cov
