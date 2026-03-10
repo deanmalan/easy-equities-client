@@ -52,17 +52,28 @@ class TestAccountOverviewParser:
 
 
 @pytest.mark.parametrize(
-    ("amount_str", "expected_currency", "expected_value"),
+    (
+        "amount_str",
+        "expected_currency_symbol",
+        "expected_currency_code",
+        "expected_value",
+    ),
     [
-        ("R72.10", "R", 72.10),
-        ("R14 433.48", "R", 14_433.48),
-        ("-$0.11", "$", -0.11),
-        ("€235.69", "EUR", 235.69),
+        ("R72.10", "R", "ZAR", 72.10),
+        ("R14 433.48", "R", "ZAR", 14_433.48),
+        ("-$0.11", "$", "USD", -0.11),
+        ("€235.69", "€", "EUR", 235.69),
     ],
 )
 def test_get_amount_and_currency_from_string(
-    amount_str: str, expected_currency: str, expected_value: float
+    amount_str: str,
+    expected_currency_symbol: str,
+    expected_currency_code: str,
+    expected_value: float,
 ):
-    currency, value = get_amount_and_currency_from_string(amount_str)
-    assert currency == expected_currency
+    currency_symbol, currency_code, value = get_amount_and_currency_from_string(
+        amount_str
+    )
+    assert currency_symbol == expected_currency_symbol
+    assert currency_code == expected_currency_code
     assert value == expected_value

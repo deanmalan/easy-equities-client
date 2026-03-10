@@ -145,20 +145,23 @@ class AccountHoldingsParser:
         return [div.to_dict() for div in divs]
 
 
-def get_amount_and_currency_from_string(amount_string: str) -> tuple[str, float]:
+def get_amount_and_currency_from_string(
+    amount_string: str,
+) -> tuple[str, str | None, float]:
     amount_match = amount_pattern_compiled.match(amount_string)
     if amount_match is None:
         raise Exception(
             f"Could not parse amount {amount_string} into currency and value."
         )
-    currency = amount_match.group("currency")
-    if not currency.isascii():
-        currency = currencies.convert_non_ascii_currency_symbol_to_ascii_code(currency)
+    currency_symbol = amount_match.group("currency")
+    currency_code = currencies.convert_non_ascii_currency_symbol_to_ascii_code(
+        currency_symbol
+    )
     value = float(
         (amount_match.group("symbol") if amount_match.group("symbol") else "")
         + amount_match.group("value").replace(" ", "")
     )
-    return currency, value
+    return currency_symbol, currency_code, value
 
 
 def get_transactions_from_page(page_body: bytes) -> List[Any]:
@@ -176,12 +179,15 @@ def get_transactions_from_page(page_body: bytes) -> List[Any]:
     transactions = []
     for row in rows:
         columns = row.find_all("td")
-        currency, value = get_amount_and_currency_from_string(columns[2].text.strip())
+        currency_symbol, currency_code, value = get_amount_and_currency_from_string(
+            columns[2].text.strip()
+        )
         transactions.append(
             {
                 "date": columns[0].text.strip(),
                 "description": columns[1].text.strip(),
-                "currency": currency,
+                "currency_symbol": currency_symbol,
+                "currency_code": currency_code,
                 "value": value,
                 "amount": columns[2].text.strip(),
             }
