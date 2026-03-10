@@ -1,6 +1,7 @@
 import json
-from typing import Any, List, Optional
+import logging
 from datetime import date, timedelta
+from typing import Any, List, Optional
 
 from bs4 import BeautifulSoup
 from requests import Session
@@ -15,10 +16,12 @@ from easy_equities_client.accounts.types import (
     Account,
     Holding,
     Transaction,
-    Valuation,
     TransactionForPeriod,
+    Valuation,
 )
 from easy_equities_client.types import Client
+
+logger = logging.getLogger(__name__)
 
 
 class AccountsClient(Client):
@@ -88,7 +91,7 @@ class AccountsClient(Client):
         current_end = min(end_date, current_start + timedelta(days=90))
 
         while current_start < end_date:
-            print(f"Current start: {current_start}, Current end: {current_end}")
+            logger.debug(f"Current start: {current_start}, Current end: {current_end}")
             transactions_for_date_range = []
 
             page_number = 1
@@ -108,7 +111,6 @@ class AccountsClient(Client):
                 transactions_for_date_range += new_transactions
                 page_number += 1
 
-            print(json.dumps(transactions_for_date_range, indent=4))
             transactions = transactions_for_date_range + transactions
 
             current_start = current_end + timedelta(days=1)

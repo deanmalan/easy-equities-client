@@ -24,19 +24,22 @@ client: PlatformClient = (
 client.login(username=username, password=password)
 
 accounts = client.accounts.list()
+
+if not os.path.exists("output"):
+    os.makedirs("output")
+
 for account in accounts:
     print(f"Getting transactions for account {account.id}")
     transactions = []
-    start_date = date(2021, 11, 1)
-    for _ in range(1):
-        end_date = start_date + timedelta(days=28 * 3)
-        print(f"Start: {start_date}, End: {end_date}")
-        transactions += client.accounts.transactions_for_period(
-            account.id, start_date, end_date
-        )
-        start_date = end_date + timedelta(days=1)
+    end_date = date.today()
+    start_date = end_date - timedelta(days=30)
 
-    print(f"Saving to transactions_{account.id}.json")
-    with open(f"transactions_{account.id}.json", "w") as f:
+    transactions = client.accounts.transactions_for_period(
+        account.id, start_date, end_date
+    )
+
+    file_name = f"output/transactions_{account.id}.json"
+
+    print(f"Saving to {file_name}")
+    with open(file_name, "w") as f:
         f.write(json.dumps(transactions, indent=4))
-    break

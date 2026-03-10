@@ -7,6 +7,9 @@ from bs4.element import Tag
 
 from easy_equities_client import constants
 from easy_equities_client.accounts.types import Account, Holding
+from easy_equities_client.utils import currencies
+
+amount_pattern_compiled = re.compile(constants.RE_AMOUNT_PATTERN)
 
 
 def extract_account_info(account_div: Tag) -> Optional[Account]:
@@ -142,6 +145,22 @@ class AccountHoldingsParser:
         return [div.to_dict() for div in divs]
 
 
+def get_amount_and_currency_from_string(amount_string: str) -> tuple[str, float]:
+    amount_match = amount_pattern_compiled.match(amount_string)
+    if amount_match is None:
+        raise Exception(
+            f"Could not parse amount {amount_string} into currency and value."
+        )
+    currency = amount_match.group("currency")
+    if not currency.isascii():
+        currency = currencies.convert_non_ascii_currency_symbol_to_ascii_code(currency)
+    value = float(
+        (amount_match.group("symbol") if amount_match.group("symbol") else "")
+        + amount_match.group("value").replace(" ", "")
+    )
+    return currency, value
+
+
 def get_transactions_from_page(page_body: bytes) -> List[Any]:
     """
     :param page_body: Page html from response.content.
@@ -157,25 +176,13 @@ def get_transactions_from_page(page_body: bytes) -> List[Any]:
     transactions = []
     for row in rows:
         columns = row.find_all("td")
-        amount_pattern = re.compile(constants.RE_AMOUNT_PATTERN)
-        amount_match = amount_pattern.match(columns[2].text.strip())
-        if amount_match is None:
-            raise Exception(
-                f"Could not parse amount {columns[2].text.strip()} into currency and value."
-            )
+        currency, value = get_amount_and_currency_from_string(columns[2].text.strip())
         transactions.append(
             {
                 "date": columns[0].text.strip(),
                 "description": columns[1].text.strip(),
-                "currency": amount_match.group("currency"),
-                "value": float(
-                    (
-                        amount_match.group("symbol")
-                        if amount_match.group("symbol")
-                        else ""
-                    )
-                    + amount_match.group("value").replace(" ", "")
-                ),
+                "currency": currency,
+                "value": value,
                 "amount": columns[2].text.strip(),
             }
         )
