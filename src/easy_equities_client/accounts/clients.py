@@ -1,5 +1,6 @@
 import json
-from typing import List, Optional
+from typing import Any, List, Optional
+from datetime import date, timedelta
 
 from bs4 import BeautifulSoup
 from requests import Session
@@ -8,6 +9,7 @@ from easy_equities_client import constants
 from easy_equities_client.accounts.parsers import (
     AccountHoldingsParser,
     AccountOverviewParser,
+    get_transactions_from_page,
 )
 from easy_equities_client.accounts.types import Account, Holding, Transaction, Valuation
 from easy_equities_client.types import Client
@@ -54,11 +56,63 @@ class AccountsClient(Client):
         response.raise_for_status()
         return json.loads(response.json())
 
-    def transactions(self, account_id) -> List[Transaction]:
+    def transactions(self, account_id: str) -> List[Transaction]:
+        """
+        Gets JSON-formatted transactions for the last year.
+        """
         self._switch_account(account_id)
         response = self.session.get(self._url(constants.PLATFORM_TRANSACTIONS_PATH))
         response.raise_for_status()
         return response.json()
+
+    def transactions_for_period(
+        self, account_id: str, start_date: date, end_date: date
+    ) -> List[Any]:
+        """
+        Gets transactions for a given period. Unfortunately not JSON-formatted
+        and contains less useful data than the yearly data.
+
+        Returns transactions ordered chronologically.
+
+        :param account_id:
+        :param start_date:
+        :param end_date:
+        """
+        self._switch_account(account_id)
+        transactions: List[Any] = []
+
+        current_start = start_date
+        current_end = min(end_date, current_start + timedelta(days=90))
+
+        while current_start < end_date:
+            print(f"Current start: {current_start}, Current end: {current_end}")
+            transactions_for_date_range = []
+
+            page_number = 1
+            while True:
+                next_url = self._url(
+                    constants.PLATFORM_TRANSACTIONS_SEARCH_PATH_NEXT_PAGE.format(
+                        start_date=f"{current_start.month}/{current_start.day}/{current_start.year}",
+                        end_date=f"{current_end.month}/{current_end.day}/{current_end.year}",
+                        page_number=page_number,
+                    )
+                )
+                response = self.session.get(next_url)
+                new_transactions = get_transactions_from_page(response.content)
+                if len(new_transactions) == 0:
+                    # No more transactions left
+                    break
+                transactions_for_date_range += new_transactions
+                page_number += 1
+
+            print(json.dumps(transactions_for_date_range, indent=4))
+            transactions = transactions_for_date_range + transactions
+
+            current_start = current_end + timedelta(days=1)
+            current_end = min(end_date, current_start + timedelta(days=90))
+
+        transactions.reverse()
+        return transactions
 
     def holdings(self, account_id: str, include_shares: bool = False) -> List[Holding]:
         """

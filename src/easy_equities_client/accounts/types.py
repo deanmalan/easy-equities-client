@@ -38,6 +38,14 @@ class Transaction(TypedDict):
     ContractCode: str
 
 
+class TransactionForPeriod(TypedDict):
+    date: str
+    description: str
+    amount: str
+    currency: str
+    value: float
+
+
 class LabelValue(TypedDict):
     Label: str
     Value: str
