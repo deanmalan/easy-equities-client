@@ -11,7 +11,13 @@ from easy_equities_client.accounts.parsers import (
     AccountOverviewParser,
     get_transactions_from_page,
 )
-from easy_equities_client.accounts.types import Account, Holding, Transaction, Valuation
+from easy_equities_client.accounts.types import (
+    Account,
+    Holding,
+    Transaction,
+    Valuation,
+    TransactionForPeriod,
+)
 from easy_equities_client.types import Client
 
 
@@ -67,7 +73,7 @@ class AccountsClient(Client):
 
     def transactions_for_period(
         self, account_id: str, start_date: date, end_date: date
-    ) -> List[Any]:
+    ) -> List[TransactionForPeriod]:
         """
         Gets transactions for a given period. Unfortunately not JSON-formatted
         and contains less useful data than the yearly data.
