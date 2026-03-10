@@ -76,7 +76,8 @@ class AccountsClient(Client):
     ) -> List[TransactionForPeriod]:
         """
         Gets transactions for a given period. Unfortunately not JSON-formatted
-        and contains less useful data than the yearly data.
+        and contains less useful data than the yearly data, because we need
+        to get it from the UI.
 
         Returns transactions ordered chronologically.
 
