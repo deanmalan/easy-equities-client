@@ -29,11 +29,16 @@ client.login(username=username, password=password)
 
 accounts = client.accounts.list()
 
+if not os.path.exists("output"):
+    os.makedirs("output")
+
 for account in accounts:
     print(f"Getting transactions for account {account.id}. ")
     transactions = client.accounts.transactions(account.id)
 
-    print(f"Saving to year_transactions_{account.id}.json")
+    file_name = f"output/year_transactions_{account.id}.json"
 
-    with open(f"year_transactions_{account.id}.json", "w") as f:
+    print(f"Saving to {file_name}")
+
+    with open(file_name, "w") as f:
         f.write(json.dumps(transactions, indent=4))

@@ -1,0 +1,163 @@
+title,name,code,symbol,entity,discern,ltr
+United Arab Emirates Dirham,dirham,AED,د.إ,&#1583;.&#1573;,,
+Afghan Afghani,afghani,AFN,؋,&#x60B;,,
+Lek,lek,ALL,L,&#x4C;,,1
+Armenian Dram,dram,AMD,֏,&#x58F;,,1
+Netherlands Antillean Guilder,guilder,ANG,ƒ,&#x192;,,1
+Angolan Kwanza,kwanza,AOA,Kz,&#x4B;&#x7A;,,1
+Argentine Peso,peso,ARS,$,&#x24;,,1
+Australian Dollar,dollar,AUD,$,&#x24;,AU$,1
+Aruban Florin,florin,AWG,ƒ,&#x192;,Afl.,1
+Azerbaijani Manat,manat,AZN,₼,&#x20BC;,,1
+Bosnia and Herzegovina Convertible Mark,convertible mark,BAM,КМ,&#x41A;&#x41C;,,1
+Barbadian Dollar,dollar,BBD,$,&#x24;,Bds$,1
+Bangladeshi Taka,taka,BDT,৳,&#x9F3;,Tk.,1
+Bulgarian Lev,lev,BGN,лв.,&#x43B;&#x432;&#x2E;,,1
+Bahraini Dinar,dinar,BHD,.د.ب,&#x2E;&#x62F;&#x2E;&#x628;,BD,1
+Burundian Franc,franc,BIF,FBu,&#x46;&#x42;&#x75;,,1
+Bermudian Dollar,dollar,BMD,$,&#x24;,BD$,1
+Brunei Dollar,dollar,BND,$,&#x24;,B$,1
+Bolivian Boliviano,boliviano,BOB,Bs,&#x42;&#x73;,B$,1
+Mvdol,mvdol,BOV,-,&#x2D;,,1
+Brazilian Real,real,BRL,R$,&#x52;&#x24;,,1
+Bahamian Dollar,dollar,BSD,$,&#x24;,B$,1
+Ngultrum,ngultrum,BTN,Nu.,&#x4E;&#x75;&#x2E;,,1
+Pula,pula,BWP,P,&#x50;,,1
+Belarusian Ruble,ruble,BYN,Br,&#x42;&#x72;,,1
+Belize Dollar,dollar,BZD,$,&#x24;,BZ$,1
+Canadian Dollar,dollar,CAD,$,&#x24;,CA$,1
+Congolese Franc,franc,CDF,FC,&#x46;&#x43;,CF,1
+Swiss Franc,franc,CHF,Fr,&#x46;&#x72;,SFr,1
+Unidad de Fomento,Unidad de Fomento,CLF,UF,&#x55;&#x46;,,1
+Chilean Peso,peso,CLP,$,&#x24;,CLP$,1
+Yuan Renminbi,yuan,CNY,¥,&#xA5;,,1
+Colombian Peso,peso,COP,$,&#x24;,COP$,1
+Costa Rican Colon,colon,CRC,₡,&#x20A1;,,1
+Cuban Peso,peso,CUP,$,&#x24;,$MN,1
+Cabo Verde Escudo,escudo,CVE,Esc,&#x45;&#x73;&#x63;,,1
+Czech Koruna,koruna,CZK,Kč,&#x4B;&#x10D;,,1
+Djibouti Franc,franc,DJF,Fdj,&#x46;&#x64;&#x6A;,,1
+Danish Krone,krone,DKK,kr,&#x6B;&#x72;,DKK,1
+Dominican Peso,peso,DOP,$,&#x24;,RD$,1
+Algerian Dinar,dinar,DZD,دج,&#x62F;&#x62C;,DA,
+Egyptian Pound,pound,EGP,£,&#xA3;,£E,1
+Ethiopian Birr,birr,ETB,ብር,&#x1265;&#x122D;,Br,1
+Nakfa,nakfa,ERN,Nkf,&#x4E;&#x6B;&#x66;,,1
+Euro,euro,EUR,€,&#x20AC;,,1
+Fiji Dollar,dollar,FJD,$,&#x24;,FJ$,1
+Falkland Islands Pound,pound,FKP,£,&#xA3;,FK£,1
+Pound sterling,pound,GBP,£,&#xA3;,,1
+Lari,lari,GEL,₾,&#x20BE;,,1
+Ghana Cedi,cedi,GHS,₵,&#x20B5;,GH¢,1
+Gibraltar Pound,pound,GIP,£,&#xA3;,,1
+Dalasi,dalasi,GMD,D,&#x44;,,1
+Guinean Franc,franc,GNF,FG,&#x46;&#x47;,GFr,1
+Quetzal,quetzal,GTQ,Q,&#x51;,,1
+Guyana Dollar,dollar,GYD,$,&#x24;,GY$,1
+Hong Kong Dollar,dollar,HKD,$,&#x24;,HK$,1
+Lempira,lempira,HNL,L,&#x4C;,,1
+Gourde,gourde,HTG,G,&#x47;,,1
+Forint,forint,HUF,Ft,&#x46;&#x74;,,1
+Rupiah,rupiah,IDR,Rp,&#x52;&#x70;,,1
+New Israeli Sheqel,sheqel,ILS,₪,&#x20AA;,NIS,1
+Indian Rupee,rupee,INR,₹,&#x20B9;,,1
+Iraqi Dinar,dinar,IQD,د.ع,&#x62F;&#x2E;&#x639;,,
+Iranian Rial,rial,IRR,﷼,&#xFDFC;,,
+Iceland Krona,krona,ISK,kr,&#x6B;&#x72;,ISK,
+Jersey Pound,pound,JEP,£,&#xA3;,JEP,1
+Jamaican Dollar,dollar,JMD,$,&#x24;,J$,1
+Jordanian Dinar,dinar,JOD,د.أ,&#x62F;&#x2E;&#x623;,,
+Yen,yen,JPY,¥,&#xA5;,JP¥,1
+Kenyan Shilling,shilling,KES,KSh,&#x4B;&#x53;&#x68;,,1
+Som,som,KGS,сом,&#x441;&#x43E;&#x43C;,,1
+Riel,riel,KHR,៛,&#x17DB;,,1
+Comorian Franc,franc,KMF,CF,&#x43;&#x46;,,1
+North Korean Won,won,KPW,₩,&#x20A9;,,1
+Won,won,KRW,₩,&#x20A9;,,1
+Kuwaiti Dinar,dinar,KWD,د.ك,&#x62F;&#x2E;&#x643;,,
+Cayman Islands Dollar,dollar,KYD,$,&#x24;,CI$,1
+Tenge,tenge,KZT,₸,&#x20B8;,,1
+Lao Kip,kip,LAK,₭,&#x20AD;,₭N,1
+Lebanese Pound,pound,LBP,ل.ل.,&#x644;&#x2E;&#x644;&#x2E;,LL,
+Sri Lanka Rupee,rupee,LKR,₨,&#x20A8;,LKR,1
+Liberian Dollar,dollar,LRD,$,&#x24;,L$,1
+Loti,loti,LSL,L,&#x4C;,,1
+Libyan Dinar,dinar,LYD,.د,&#x2E;&#x62F;,LD,
+Moroccan Dirham,dirham,MAD,د.م.,&#x62F;&#x2E;&#x645;&#x2E;,DH,
+Moldovan Leu,leu,MDL,L,&#x4C;,,1
+Malagasy Ariary,ariary,MGA,Ar,&#x41;&#x72;,,1
+Denar,denar,MKD,ден,&#x434;&#x435;&#x43D;,,1
+Kyat,kyat,MMK,K,&#x4B;,,1
+Tugrik,tugrik,MNT,₮,&#x20AE;,,1
+Pataca,pataca,MOP,MOP$,&#x4D;&#x4F;&#x50;&#x24;,,1
+Ouguiya,ouguiya,MRU,UM,&#x55;&#x4D;,,1
+Mauritius Rupee,rupee,MUR,₨,&#x20A8;,,1
+Rufiyaa,rufiyaa,MVR,Rf.,&#x52;&#x66;&#x2E;,MRf,1
+Malawi Kwacha,kwacha,MWK,K,&#x4B;,,1
+Mexican Peso,peso,MXN,$,&#x24;,MX$,1
+Mexican Unidad de Inversion (UDI),udi,MXV,-,&#x2D;,,1
+Malaysian Ringgit,ringgit,MYR,RM,&#x52;&#x4D;,,1
+Mozambique Metical,metical,MZN,MT,&#x4D;&#x54;,MTn,1
+Namibia Dollar,dollar,NAD,$,&#x24;,N$,1
+Naira,naira,NGN,₦,&#x20A6;,,1
+Cordoba Oro,cordoba,NIO,C$,&#x43;&#x24;,,1
+Norwegian Krone,krone,NOK,kr,&#x6B;&#x72;,,1
+Nepalese Rupee,rupee,NPR,रु,&#x930;&#x941;,₨,1
+New Zealand Dollar,dollar,NZD,$,&#x24;,NZ$,1
+Rial Omani,rial,OMR,ر.ع.,&#x631;&#x2E;&#x639;&#x2E;,R.O.,
+Balboa,balboa,PAB,B/.,&#x42;&#x2F;&#x2E;,,1
+Sol,sol,PEN,S/,&#x53;&#x2F;,,1
+Kina,kina,PKG,K,&#x4B;,,1
+Philippine Peso,peso,PHP,₱,&#x20B1;,,1
+Pakistan Rupee,rupee,PKR,₨,&#x20A8;,,1
+Zloty,zloty,PLN,zł,&#x7A;&#x142;,,1
+Guarani,guarani,PYG,₲,&#x20B2;,,1
+Qatari Rial,riyal,QAR,ر.ق,&#x631;&#x2E;&#x642;&#xA;,QR,
+Romanian Leu,leu,RON,L,&#x4C;,,
+Serbian Dinar,dinar,RSD,дин,&#x434;&#x438;&#x43D;,,1
+Russian Ruble,ruble,RUB,₽,&#x20BD;,,1
+Rwanda Franc,franc,RWF,FRw,&#x46;&#x52;&#x77;,R₣,1
+Saudi Riyal,riyal,SAR,ر.س,&#x631;&#x2E;&#x633;&#xA;,SAR,
+Solomon Islands Dollar,dollar,SBD,$,&#x24;,SI$,1
+Seychelles Rupee,rupee,SCR,₨,&#x20A8;,SRe,1
+Sudanese Pound,pound,SDG,£,&#xA3;,£SD,1
+Swedish Krona,krona,SEK,kr,&#x6B;&#x72;,,1
+Singapore Dollar,dollar,SGD,$,&#x24;,S$,1
+Saint Helena Pound,pound,SHP,£,&#xA3;,,1
+Leone,leone,SLE,Le,&#x4C;&#x65;,,1
+Leone,leone,SLL,Le,&#x4C;&#x65;,,1
+Somali Shilling,shilling,SOS,Sh.So.,&#x53;&#x68;&#x2E;&#x53;&#x6F;&#x2E;,,1
+Surinam Dollar,dollar,SRD,$,&#x24;,Sr$,1
+Dobra,dobra,STN,Db,&#x44;&#x62;,,1
+South Sudanese Pound,pound,SSP,£,&#xA3;,SS£,1
+Syrian Pound,pound,SYP,£,&#xA3;,£S,1
+Lilangeni,lilangeni,SZL,L,&#x4C;,,1
+Baht,baht,THB,฿,&#xE3F;,,1
+Somoni,somoni,TJS,SM,&#x53;&#x4D;,,1
+Turkmenistan New Manat,manat,TMT,m,&#x6D;,,1
+Tunisian Dinar,dinar,TND,د.ت,&#x62F;&#x2E;&#x62A;,DT,
+Pa’anga,pa’anga,TOP,T$,&#x54;&#x24;,PT,1
+Turkish Lira,lira,TRY,₺,&#x20BA;,,
+Trinidad and Tobago Dollar,dollar,TTD,$,&#x24;,TT$,1
+New Taiwan Dollar,dollar,TWD,$,&#x24;,NT$,1
+Tanzanian Shilling,shiling,TZS,TSh,&#x54;&#x53;&#x68;,,1
+Hryvnia,hryvnia,UAH,₴,&#x20B4;,грн,1
+Uganda Shilling,shilling,UGX,USh,&#x55;&#x53;&#x68;,,1
+United States Dollar,dollar,USD,$,&#x24;,,1
+Peso Uruguayo,peso,UYU,$,&#x24;,$U,1
+Uzbekistan Sum,sum,UZS,сум,&#x441;&#x443;&#x43C;,,1
+Bolívar Soberano,bolívar,VED,Bs.,&#x42;&#x73;&#x2E;,,1
+Bolívar Soberano,bolívar,VES,Bs.S,&#x42;&#x73;&#x2E;&#x53;,,1
+Dong,dong,VND,₫,&#x20AB;,,1
+Vatu,vatu,VUV,VT,&#x56;&#x54;,,1
+Tala,tala,WST,$,&#x24;,WS$,1
+CFA Franc BEAC,franc,XAF,FCFA,&#x46;&#x43;&#x46;&#x41;,,1
+East Caribbean Dollar,dollar,XCD,$,&#x24;,EC$,1
+Caribbean guilder,guilder,XCG,Cg,&#x43;&#x67;,,1
+SDR (Special Drawing Right),SDR,XDR,SDR,&#x53;&#x44;&#x52;,,1
+CFA Franc BCEAO,franc,XOF,CFA,&#x43;&#x46;&#x41;,,1
+CFP Franc,franc,XPF,₣,&#x20A3;,,1
+Yemeni Rial,rial,YER,ر.ي,&#x631;&#x2E;&#x64A;,,
+Rand,rand,ZAR,R,&#x52;,,1
+Zambian Kwacha,kwacha,ZMW,K,&#x4B;,ZK,1
+Zimbabwe Gold,zig,ZWG,ZiG,&#x5A;&#x69;&#x47;,,1

@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from easy_equities_client.accounts.parsers import (
     AccountOverviewParser,
     extract_account_info,
+    get_amount_and_currency_from_string,
 )
 from easy_equities_client.accounts.types import Account
 
@@ -48,3 +49,20 @@ class TestAccountOverviewParser:
             ),
         ]
         assert expected_result == parser.extract_accounts()
+
+
+@pytest.mark.parametrize(
+    ("amount_str", "expected_currency", "expected_value"),
+    [
+        ("R72.10", "R", 72.10),
+        ("R14 433.48", "R", 14_433.48),
+        ("-$0.11", "$", -0.11),
+        ("€235.69", "EUR", 235.69),
+    ],
+)
+def test_get_amount_and_currency_from_string(
+    amount_str: str, expected_currency: str, expected_value: float
+):
+    currency, value = get_amount_and_currency_from_string(amount_str)
+    assert currency == expected_currency
+    assert value == expected_value
