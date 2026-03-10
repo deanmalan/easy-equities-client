@@ -6,6 +6,9 @@ currencies_file = f"{dir_path}/currencies.csv"
 
 
 def convert_non_ascii_currency_symbol_to_ascii_code(symbol: str) -> str | None:
+    """
+    XXX: Imperfect, because $, for example, will always convert to USD.
+    """
 
     with open(currencies_file, newline="") as csvfile:
         reader = csv.DictReader(csvfile)

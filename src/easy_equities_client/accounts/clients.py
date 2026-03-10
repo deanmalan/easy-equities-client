@@ -82,7 +82,7 @@ class AccountsClient(Client):
         and contains less useful data than the yearly data, because we need
         to get it from the UI.
 
-        Returns transactions ordered chronologically (oldest to newest).
+        Returns transactions ordered in reverse chronological order (newest to oldest).
         """
         self._switch_account(account_id)
         transactions: List[Any] = []
@@ -116,7 +116,6 @@ class AccountsClient(Client):
             current_start = current_end + timedelta(days=1)
             current_end = min(end_date, current_start + timedelta(days=90))
 
-        transactions.reverse()
         return transactions
 
     def holdings(self, account_id: str, include_shares: bool = False) -> List[Holding]:
