@@ -79,11 +79,7 @@ class AccountsClient(Client):
         and contains less useful data than the yearly data, because we need
         to get it from the UI.
 
-        Returns transactions ordered chronologically.
-
-        :param account_id:
-        :param start_date:
-        :param end_date:
+        Returns transactions ordered chronologically (oldest to newest).
         """
         self._switch_account(account_id)
         transactions: List[Any] = []
