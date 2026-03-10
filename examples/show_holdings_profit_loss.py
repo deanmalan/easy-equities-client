@@ -1,7 +1,7 @@
 """
 Calculate the total profit/loss for each of your accounts.
 
-Usage: python show_holdings_profit_loss.py <platform:satrix/easyequities> <username> <password>
+Usage: uv run --with colorama examples/show_holdings_profit_loss.py <platform:satrix/easyequities> <username> <password>
 
 Requires the colorama package.
 """
